@@ -1,36 +1,34 @@
-class Stack:
-      def __init__(self):
-          self.stack = []
+#una pila para 20 nombres imprimes aplicando el concepto de LIFO
+#pero sacas uno pero sacadno LIFO
 
-      def push(self, element):
-         self.stack.append(element)
+#ahora tiene que morir al primero
 
-      def pop(self):
-            if self.isEmpty():
-             return "Stack is empty"
-            return self.stack.pop()
+pilaFia = []
 
-      def peek(self):
-            if self.isEmpty():
-             return "Stack is empty"
-            return self.stack[-1]
+# Ingresar 3 nombres (puedes cambiar a 20 si quieres)
+for i in range(3):
+    nom = input("Ingrese su nombre: ")
+    pilaFia.append(nom)
 
-      def isEmpty(self):
-            return len(self.stack) == 0
+# Mostrar pila original
+print("\nPila original:")
+print(pilaFia)
 
-      def size(self):
-       return len(self.stack)
+# Eliminar el último elemento (LIFO)
+elimUltim = pilaFia.pop()
+print("\nElemento eliminado (LIFO):", elimUltim)
 
-# Create a stack
-myStack = Stack()
+# Mostrar pila después de eliminar el último
+print("\nPila después de eliminar el último:")
+for i in range(len(pilaFia) - 1, -1, -1):
+    print(pilaFia[i])
 
-myStack.push('A')
-myStack.push('B')
-myStack.push('C')
+# Eliminar el primero (no LIFO, pero manualmente)
+elimPrim = pilaFia.pop(0)
+print("\nElemento eliminado (el primero ingresado):", elimPrim)
 
-print("Stack: ", myStack.stack)
-print("Pop: ", myStack.pop())
-print("Stack after Pop: ", myStack.stack)
-print("Peek: ", myStack.peek())
-print("isEmpty: ", myStack.isEmpty())
-print("Size: ", myStack.size())
+# Mostrar pila final
+print("\nPila final:")
+for i in range(len(pilaFia) - 1, -1, -1):
+    print(pilaFia[i])
+
